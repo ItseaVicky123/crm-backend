@@ -19,7 +19,7 @@ use Sofa\Eloquence\Mappable;
  */
 class Vertical extends Model
 {
-    use Eloquence, Mappable;
+    // use Eloquence, Mappable;
 
     /**
      * @var string

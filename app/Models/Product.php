@@ -314,6 +314,11 @@ class Product extends BaseModel
         });
     }
 
+    // public function getDeclaredValueAttribute()
+    // {
+    //     return $this->attributes['declaredValue'] ?? null;
+    // }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */

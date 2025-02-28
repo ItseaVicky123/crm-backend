@@ -12,7 +12,7 @@ use Sofa\Eloquence\Mappable;
  */
 class ProductCategory extends Model
 {
-    use Eloquence, Mappable;
+   //  use Eloquence, Mappable;
 
    /**
     * @var string

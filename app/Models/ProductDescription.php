@@ -12,7 +12,8 @@ use Sofa\Eloquence\Mappable;
  */
 class ProductDescription extends Model
 {
-    use Eloquence, Mappable;
+    // use Eloquence, Mappable;
+    use Mappable;
 
     /**
      * @var bool

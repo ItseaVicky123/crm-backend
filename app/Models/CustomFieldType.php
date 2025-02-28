@@ -12,7 +12,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class CustomFieldType extends Model
 {
-    use Eloquence, SoftDeletes;
+    // use Eloquence, SoftDeletes;
+    use SoftDeletes;
 
     CONST TYPE_TEXT        = 1;
     CONST TYPE_NUMERIC     = 2;

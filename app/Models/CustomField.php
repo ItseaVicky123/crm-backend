@@ -23,7 +23,8 @@ use Carbon\Carbon;
  */
 class CustomField extends Model
 {
-    use SoftDeletes, Mappable, Eloquence;
+    // use SoftDeletes, Mappable, Eloquence;
+    use SoftDeletes;
 
     const MAX_FIELDS = 250;
 

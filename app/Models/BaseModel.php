@@ -3,6 +3,7 @@
 
 namespace App\Models;
 
+use App\Traits\MappableTrait;
 use App\Traits\ModelCommenter;
 use App\Traits\ModelReader;
 use App\Traits\ModelWriter;
@@ -16,19 +17,27 @@ use Illuminate\Database\Eloquent\Model;
  */
 class BaseModel extends Model
 {
-    use Eloquence, Mappable, ModelReader, ModelWriter, ModelCommenter;
+    // use Eloquence, Mappable, ModelReader, ModelWriter, ModelCommenter;
+    use ModelReader, ModelWriter, ModelCommenter, MappableTrait;
 
+    protected $maps        = [];
+    protected $appends     = [];
+    protected $perPage     = 15;
+    public $maxPerPage     = 15;
     const WEB_CONNECTION   = 'mysql';
     const SLAVE_CONNECTION = 'mysql_slave';
     const API_CONNECTION   = 'mysql_api';
 
-    public $maxPerPage     = 15;
+    
+    public function __construct(array $attributes = [])
+    {
+        parent::__construct($attributes);
+        
+        if (!isset($this->maps)) {
+            $this->maps = [];
+        }
 
-    /**
-     * An array of attribute mappings
-     *
-     * @var array
-     */
-    protected $maps       = [];
-    protected $perPage    = 15;
+        $this->appends = array_keys($this->maps);
+    }
 }
+

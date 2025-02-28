@@ -15,7 +15,8 @@ use App\Models\Contact\Contact;
  */
 class CustomFieldValue extends Model
 {
-    use SoftDeletes, Eloquence, Mappable, HasCompositePrimaryKey;
+    // use SoftDeletes, Eloquence, Mappable, HasCompositePrimaryKey;
+    use SoftDeletes, HasCompositePrimaryKey;
 
     const MAX_VALUES = 250;
 

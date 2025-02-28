@@ -56,11 +56,11 @@ trait HasCompositePrimaryKey
     /**
      * Set the keys for a save update query.
      *
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @param $query
+     * @return $query
      * @throws Exception
      */
-    protected function setKeysForSaveQuery(Builder $query)
+    protected function setKeysForSaveQuery($query)
     {
         foreach ($this->getKeyName() as $key => $value) {
             // Model already exists and we're now
